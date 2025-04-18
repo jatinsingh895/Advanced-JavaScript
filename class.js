@@ -33,6 +33,3 @@ class person{
 let p=new person("Jatin","Singh")
 console.log(p.firstname)
 console.log(p.lastname)
-// METHODS
-
-// function on a class are called methods while defining these methods we dont use the function keyword. we directly srtart with the name. 
