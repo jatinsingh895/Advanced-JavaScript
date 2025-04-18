@@ -1,42 +1,35 @@
-// function sayHello()
-// {
-//     let you=prompt("what's your name?");
-//     console.log("hello",you+"I")
+// function sayHello() {
+//     let you = prompt("What's your name? ");
+//     console.log("Hello",you + "I");
 // }
 // sayHello();
-// let varContainingFunction=function(){
-//     let varInFunction="I'm in a function.";
-//     console.log("hi there!",varInFunction);
+// let varContainingFunction = function() {
+//     let varInFunction = "I'm in a function. ";
+//     console.log("hi! there",varInFunction);
 // };
 // varContainingFunction();
-// function TextDecodersStream(para1,para2)
-// {
-//     return para1+""+para2;
+// function tester(para1,para2){
+//     return para1 + " " + para2;
 // }
-// const arg1="argument1";
-// const arg2="argument2";
-// tester(arg1,arg2);
-// const prompt = require("prompt");
-// function add() {
-//     prompt.start();
-//     prompt.get(
-//         ["num1", "num2"],
-//         function (err, res) {
-//             if (err) {
-//                 console.log(err);
-//             } else {
-//                 var sum =
-//                     parseFloat(res.num1) +
-//                     parseFloat(res.num2);
-//                 console.log( "Sum of " +
-//                         res.num1 + " and " +
-//                         res.num2 + " is " + sum
-//                 );
-//             }
-//         }
-//     );
+// const arg1 = "arguement 1";
+// const arg2 = "arguement 2";
+// tester(arg1, arg2);
+// console.log(tester(arg1, arg2));
+
+// function addTwoNumbers() {
+//     let x = prompt("Enter a number:");
+//     let y = prompt("Enter another number:");
+
+//     let num1 = parseInt(x);
+//     let num2 = parseInt(y);
+
+//     let sum = num1 + num2;
+//     console.log("The sum is: " + sum);
+//     return sum;
 // }
-// add();
+
+// addTwoNumbers();
+
 // function addNumbers(num1, num2) {
 //     return parseInt(num1) + parseInt(num2);
 // }
@@ -45,95 +38,135 @@
 // const result3 = addNumbers("6","16");
 
 // console.log(result);
+//default parameters in functions
+// function addTwoNumbers(x=2,y=3){
+//     console.log(x+y);
+// }
+// addTwoNumbers(1,2);
+// addTwoNumbers();
 
-// special function
-// let doingArrowStuff = x => console.log(x);
-// let addtwoNumbers = (x,y) => console.log(x+y);
-// let sayHi =() => console.log("hi");
-// const arr = ["squirrel","alpaca","buddy"];
-// arr.forEach(e=> console.log(e));
-// spread opearator
+
+
+//ARROW FUNCTIONS
+// let doingArrowStuff = x => console.log(x)
+// doingArrowStuff("Great!");
+
+// let addTwoNumbers = (x,y) => console.log(x+y);
+// addTwoNumbers(5,3);
+
+// const arr=["squirrel" ,"cat","buddy"];
+// arr.forEach(e => console.log(e));
+
+
+
+
+//spread operator
 // let spread = ["so","much","fun"];
-// let message = ["javascript","is",...spread,"and","very","poweerful"];
-// console.log(message);
+// let mess=["js","is",...spread,"and","powerful"];
+// console.log(mess);
+
+//example 2
 // function addTwoNumbers(x,y){
 //     console.log(x+y);
 // }
-// let arr = [5,9];
+// let arr=[5,9];
 // addTwoNumbers(...arr);
-// function addFourNumbers(x,y,z,a)
-// {
+//example 3
+// function addFourNumbers(x,y,z,a){
 //     console.log(x+y+z+a);
 // }
-// let arr1 = [5,9];
-// let arr2 = [6,7];
-// addFourNumbers(...arr1,...arr2);
-// REST PARAMETER
-// function someFunction(param1,...param2)
-// {
+// let arr=[5,9];
+// let arr2=[6,7];
+// addFourNumbers(...arr,...arr2);
+
+
+//Rest Parameter
+//comes on function defintion array ke form mein aajayenge
+// function someFunction(param1, ...param2){
 //     console.log(param1,param2);
 // }
-// someFunction("hi","there!","how  are you");
-// RETURNING FUNCTION VALUE
-// function addTwoNumbers(num1, num2) {
-//     return num1 + num2;
+// someFunction("hi","there","how r uh?");
+
+
+//Returning function values
+// let addTwoNumbers = (x,y) =>  (x+y);
+// let resultArr =[];
+// for(let i =0 ;i<10;i++){
+//     let result = addTwoNumbers(i,2*i);
+//     resultArr.push(result);
 // }
-// let resultsArr = [];
-// for (let i = 0; i < 10; i++) {
-//     let result = addTwoNumbers(i, 2 * i);
-//     resultsArr.push(result);
-// }
-// console.log(resultsArr);
-// RETURNING WITH ARROW FUNCTIONS today
-// let addTwoNumbers=(x,y)=>x+y;
+// console.log(resultArr);
+
+// Returning with arrow function
+// let addTwoNumbers=(x,y) => x+y;
 // let result=addTwoNumbers(12,15);
 // console.log(result);
-// let addTwoNumbers=(x,y)=>
-// {
-//     console.log("Adding...");
+// let addTwoNumbers = (x,y) => {
+//     console.log("Addling...");
 //     return x+y;
 // }
-// VARIABLE SCOPE IN FUNCTIONS
-// SCOPE
-// function testAvailability(x){
-//     console.log("Available here:",x)
+
+
+//Variable scope in functions
+//let and const both are block scope and let can be reinitialized and redeclared output is reference error and const is one time initialized and one time declared
+//var is a function scope  we can access the variable before declaration but that value is undefined
+
+// function testAvailability(x) {
+//     console.log("Available here:",x);
 // }
-// function testAvailability()
-// {
-//     let y="local variable";
-//     console.log("Available here:",y)
+// testAvailability("Hi");
+// console.log("Not Available here:",x);//this is called reference error
+
+// function testAvailability() {
+//     let y="Local Variable";
+//     console.log("Available here:",y);
 // }
 // testAvailability();
-// console.log("not available here:",y);
-// function doingstuff(){
-//     if (true){
-//         var x="local";
+// console.log("Not Available here:",y);
+
+// function testAvailability() {
+//          let y="I'll return";
+//          console.log("Available here:",y);
+//          return y;
+//      }
+// let z=testAvailability() {
+//     console.log("Available here:",z);
+//     console.log("Na:",y);
+// }
+// function doingStuff() {
+//     if(true) {
+//         var x = "local";
 //     }
 //     console.log(x);
 // }
-// doingstuff();
-// function doingstuff(){
-//     if (true){
+// doingStuff();
+// function doingStuff() {
+//     if(true) {
 //         console.log(x);
-//         var x="local";
+//         let x = "local";
 //     }
+//     console.log(x);
 // }
-// doingstuff();
-// function doingstuff(){
-//     if (true){
+// doingStuff();
+// function doingStuff() {
+//     if(true) {
 //         console.log(x);
-//         let x="local";
+//         var x = "local";
 //     }
+   
 // }
-// doingstuff();
-// CONST SCOPE
-// function doingstuff(){
-//     if (true){
-//         console.log(x);
-//         constx="local";
+// doingStuff();
+// function doingStuff() {
+//     if(true) {
+//         const x= "local";
+        
 //     }
+//     console.log(x);
+   
 // }
-// doingstuff();
+// doingStuff();
+
+
 //Global Variable
 // let globalVar = "Accessible anywhere";
 // console.log("Outside function:",globalVar);
